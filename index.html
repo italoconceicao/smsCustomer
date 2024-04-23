@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container-fora">
+
+    <div id="div1">
         <div id="container-dentro">
-        <!-- <h2>Selecione o arquivo<br></h2> CONTINUAR DAQUI-->
+        <!-- <h2>Selecione o arquivo<br></h2> -->
         
-        <input type="file" id="arquivo">
-        <div id="texto"></div>
+        <label for="arquivo">Selecionar Informações</label>
+        <input type="file" name="arquivo" id="arquivo" autofocus>
         </input>
 
         </div>
     </div>
+    
+    <div id="div2">
+    <p>Confira aqui as Informações:</p>
+    <textarea id="texto"></textarea>
+    <button type="submit">Enviar</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
