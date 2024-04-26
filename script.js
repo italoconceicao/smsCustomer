@@ -1,79 +1,62 @@
-body {
-    border: 0px; margin: 0px; padding: 0px;
-    background-color: #04AA6D;
-}
+let conteudoFormatado = null
 
-header {
-    height: 10vh;
-    width: 100vw;
-    text-align: center;
-}
+let fileInput = document.querySelector('#arquivo');
+let output = document.querySelector('#texto');
+let botaoEnviar = document.querySelector('#botaoEnviar')
+let resultado = document.querySelector('#textoResultado')
+
+
+fileInput.addEventListener('change', async () => {
     
-#container-corpo {
-    margin: auto;
-    padding-top: 10vh;
-    height: 50vh;
-    width: 90%;
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-}
-
-#div1 {   
-    width: 30%;
-    height: 30vh;
-    text-decoration: none;
-}
-
-input {
-    display: none;
-    cursor: pointer;
-}
-
-label {
-	box-shadow: 0px 10px 10px -9px rgb(66, 66, 66);
-	background-color: lightgreen;
-	border-radius:11px;
-	cursor:pointer;
-	color:#04AA6D;
-	font-family:Trebuchet MS;
-	font-size:20px;
-	font-weight:bold;
-	padding:15px 9px;
-	text-decoration:none;
-}
-
-label:hover {
-	background-color:rgb(97, 226, 97);
-}
-
-label:active {
-	position:relative;
-	top:1px;
-}
-
-#div2 {
-    width: 30%;
-    height: 30vh;
+    const [file] = fileInput.files;
     
-}
+    if (file) {
+        conteudo = await file.text();
+        output.innerText = conteudo;
+    }
+    
+    console.log(conteudo); // <= CONFERENCIA
+    let outputValue = document.querySelector('#texto').value;
+    conteudoFormatado = outputValue.split(' ')
 
-#div2 p{
-    color: white;
-    font-size: x-large;
-}
 
-textarea {
-    width: 100%;
-    height: 100%;
-}
+    console.log(conteudoFormatado) // <= CONFERENCIA
+});
 
-#div2 button {
-    width: 30%;
-    height: 20%;
-    cursor: pointer;
-}
+botaoEnviar.addEventListener('click', () => {
 
-#resultado p {
-    text-align: center;
-}
+  resultado.innerText = `${conteudoFormatado[1]} ${conteudoFormatado[7]} ${conteudoFormatado[8]} ${conteudoFormatado[15]}`;
+})
+
+
+
+
+
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+// const destinatario = null;
+
+// const GZAPPY_URL = "https://api.gzappy.com/v1/message/send-message"
+
+// const response = await fetch(GZAPPY_URL, {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//     "user_token_id": '$USER_TOKEN_ID'
+//   },
+//   body: JSON.stringify({
+//     instance_id: '$INSTANCE_ID',
+//     instance_token: '$INSTANCE_TOKEN',
+//     message: [`Firmeza, irmão?!
+// chegou ao nosso conhecimento que voce ta em débito com a Caixa Ecônomica, ta ligado
+// e acontece que ficou feio pra tu
+// e seguinte, tu vai te que ta fazendo uma pix pra gente pra gente ta resolvendo isso ae
+//     `],
+//     phone: ["5551982616617"]
+//   })
+// })
+
+// const data = await response.json()
+// console.log(data)
+// { msg: 'Messages sent' }
