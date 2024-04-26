@@ -1,11 +1,22 @@
 body {
     border: 0px; margin: 0px; padding: 0px;
     background-color: #04AA6D;
-    height: 100vh;
+}
+
+header {
+    height: 10vh;
     width: 100vw;
+    text-align: center;
+}
+    
+#container-corpo {
+    margin: auto;
+    padding-top: 10vh;
+    height: 50vh;
+    width: 90%;
     display: flex;
-    justify-content:space-around;
-    align-items: center;
+    align-items: baseline;
+    justify-content: center;
 }
 
 #div1 {   
@@ -14,16 +25,8 @@ body {
     text-decoration: none;
 }
 
-#container-dentro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 input {
     display: none;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
 }
 
@@ -31,7 +34,6 @@ label {
 	box-shadow: 0px 10px 10px -9px rgb(66, 66, 66);
 	background-color: lightgreen;
 	border-radius:11px;
-	display:inline-block;
 	cursor:pointer;
 	color:#04AA6D;
 	font-family:Trebuchet MS;
@@ -40,18 +42,20 @@ label {
 	padding:15px 9px;
 	text-decoration:none;
 }
+
 label:hover {
 	background-color:rgb(97, 226, 97);
 }
+
 label:active {
 	position:relative;
 	top:1px;
 }
-#div2 {   
-    margin-top: -4%;
-    margin-left: -30%;
+
+#div2 {
     width: 30%;
     height: 30vh;
+    
 }
 
 #div2 p{
@@ -68,4 +72,8 @@ textarea {
     width: 30%;
     height: 20%;
     cursor: pointer;
+}
+
+#resultado p {
+    text-align: center;
 }
