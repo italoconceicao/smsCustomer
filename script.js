@@ -36,11 +36,11 @@ async function dispararMensagem(mensagem, whatsapp){
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      "user_token_id": '4968d164-15aa-4e1b-9d87-7d977fd1077a'
+      "user_token_id": process.env.USER_TOKEN_ID // <= Variável de Ambiente
     },
     body: JSON.stringify({
-      instance_id: 'F78KTNMGJRMWYWBFDX23FLYY',
-      instance_token: '7d941d6a-bf42-48f1-ad40-992d5029d824',
+      instance_id: process.env.INSTANCE_ID, // <= Variável de Ambiente
+      instance_token: process.env.INSTANCE_TOKEN, // <= Variável de Ambiente
       message: mensagem,
       phone: whatsapp,
     })
